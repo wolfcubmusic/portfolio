@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наталья Волченкова — графический дизайнер · AI-визуалы</title>
+<meta name="description" content="Портфолио графического дизайнера Натальи Волченковой: визуальные концепции для брендов, три избранных проекта — ПОЛДЕНЬ, ТИШЕ, МЕСТО.">
+<style>
+/* ============================================================
+   НАТАЛЬЯ ВОЛЧЕНКОВА · ПЕРВЫЙ ЭКРАН «АВТОРСКАЯ ОБЛОЖКА»
+   Палитра: фон #F5F5F2 · текст #222423 · акцент #3454E8
+   ============================================================ */
+
+:root{
+  --bg:      #F5F5F2;
+  --ink:     #222423;
+  --accent:  #3454E8;
+  --muted:   #5C5E5B;
+  --line:    rgba(34,36,35,.16);
+
+  --pad-x:   clamp(20px, 4.2vw, 80px);
+
+  /* Шрифты: без внешних библиотек. Заменяемые стеки. */
+  --sans:   "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --grotesk:"Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --mono:   ui-monospace, "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+
+html{ scroll-behavior:auto; }
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior:smooth; }
+}
+
+html{ scrollbar-gutter:stable; }
+body.dialog-open{ overflow:hidden; }
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{ background:rgba(52,84,232,.18); }
+
+img,svg{ display:block; max-width:100%; }
+button{ font:inherit; color:inherit; }
+a{ color:var(--accent); }
+
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+.visually-hidden{
+  position:absolute; width:1px; height:1px; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
+}
+
+.skip{
+  position:fixed; top:-60px; left:var(--pad-x); z-index:60;
+  background:var(--ink); color:var(--bg);
+  font:600 13px/1 var(--mono); letter-spacing:.08em;
+  padding:12px 18px; text-decoration:none;
+  transition:top .25s ease;
+}
+.skip:focus-visible{ top:12px; }
+
+/* ---------- вертикальная колонка-колонтитул (декор разворота) ---------- */
+.folio-side{
+  position:fixed; right:14px; top:50%;
+  transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;
+  font:500 10.5px var(--mono); letter-spacing:.34em; text-transform:uppercase;
+  color:rgba(34,36,35,.42);
+  pointer-events:none; z-index:1; white-space:nowrap;
+}
+@media (max-width:1340px){ .folio-side{ display:none; } }
+
+/* ============================= ШАПКА ============================= */
+.site-head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:24px 40px; flex-wrap:wrap;
+  padding:clamp(18px,2.4vh,26px) var(--pad-x);
+  border-bottom:1px solid var(--line);
+}
+.brand-name{
+  font:800 clamp(16px,1.2vw,19px)/1.1 var(--grotesk);
+  letter-spacing:.055em; text-transform:uppercase;
+}
+.brand-role{
+  margin-top:5px;
+  font:500 12px/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted);
+}
+.site-nav{ display:flex; align-items:center; gap:clamp(16px,2vw,34px); }
+.nav-link{
+  background:none; border:0; padding:6px 2px; cursor:pointer;
+  font:600 12.5px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink); text-decoration:none;
+  border-bottom:2px solid transparent;
+  transition:color .25s ease, border-color .25s ease;
+}
+.nav-link:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+.nav-link .arr{ color:var(--accent); display:inline-block; transition:transform .25s ease; }
+.nav-link:hover .arr{ transform:translate(2px,-2px); }
+
+/* ============================ РАЗВОРОТ ============================ */
+.spread{
+  display:grid;
+  grid-template-columns:minmax(0,38fr) minmax(0,62fr);
+  gap:clamp(32px,4vw,72px);
+  align-items:start;
+  padding:clamp(28px,4.5vh,60px) var(--pad-x) clamp(34px,5.5vh,72px);
+}
+
+/* ---------- левая колонка: самопрезентация ---------- */
+.intro{ display:flex; flex-direction:column; min-width:0; container-type:inline-size; }
+
+.kicker{
+  display:flex; align-items:center; gap:12px;
+  font:600 12px/1.5 var(--mono); letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted);
+}
+.kicker::before{ content:""; width:10px; height:10px; background:var(--accent); flex:none; }
+
+.headline{
+  margin-top:clamp(18px,2.6vh,30px);
+  font:800 clamp(40px,5.2vw,104px)/0.99 var(--grotesk);
+  letter-spacing:-.022em; text-transform:uppercase;
+}
+.headline .line{
+  display:block; overflow:hidden;
+  padding-bottom:.09em; margin-bottom:-.09em; /* место под выносные/хвосты */
+}
+.headline .line-in{
+  display:block; transform:none;
+  animation:rise .95s cubic-bezier(.16,1,.3,1) forwards;
+  animation-delay:calc(.1s + .13s * var(--i,0));
+}
+.headline .pt{ font-style:normal; color:var(--accent); }
+.soft-wrap{ overflow-wrap:normal; word-break:normal; }
+@supports(font-size:1cqi){ .headline{ font-size:clamp(34px,16cqi,104px); } }
+@keyframes rise{ from{ transform:translateY(114%); } to{ transform:translateY(0); } }
+
+.lede{
+  margin-top:clamp(18px,2.6vh,28px);
+  max-width:33em;
+  color:rgba(34,36,35,.9);
+}
+
+.cta{
+  display:inline-flex; align-items:center; gap:14px;
+  margin-top:clamp(22px,3.2vh,34px); align-self:flex-start;
+  padding:15px 24px;
+  border:1px solid var(--ink);
+  font:700 13px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink); text-decoration:none;
+  transition:background .3s ease, color .3s ease;
+}
+.cta .arr{ color:var(--accent); font-size:15px; transition:transform .3s cubic-bezier(.2,.8,.2,1), color .3s ease; }
+.cta:hover{ background:var(--ink); color:var(--bg); }
+.cta:hover .arr{ color:var(--bg); transform:translate(3px,-3px); }
+
+.intro-meta{
+  margin-top:clamp(18px,2.6vh,26px);
+  font:500 11.5px/1.6 var(--mono); letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted);
+}
+
+.cue{
+  margin-top:auto; padding-top:clamp(26px,4vh,44px);
+  display:flex; align-items:center; gap:14px;
+  font:500 11px var(--mono); letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted);
+}
+.cue-line{ position:relative; width:64px; height:1px; background:var(--line); overflow:hidden; flex:none; }
+.cue-line::after{
+  content:""; position:absolute; inset:0; background:var(--accent);
+  transform:translateX(-101%);
+  animation:cue 2.6s cubic-bezier(.6,0,.3,1) infinite;
+}
+@keyframes cue{ 0%{transform:translateX(-101%)} 55%{transform:translateX(0)} 100%{transform:translateX(101%)} }
+
+/* ---------- правая колонка: галерея ---------- */
+#projects{ scroll-margin-top:20px; }
+
+.gallery-head{
+  display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+  padding:12px 2px; margin-bottom:clamp(18px,2.6vh,30px);
+  border-top:1px solid var(--ink); border-bottom:1px solid var(--line);
+  font:600 12px/1.5 var(--mono); letter-spacing:.22em; text-transform:uppercase;
+}
+.gh-count{ color:var(--accent); }
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.42fr) minmax(0,1fr);
+  grid-template-rows:auto auto;
+  column-gap:clamp(20px,2.4vw,36px);
+}
+.stack{
+  grid-column:2; grid-row:1 / 3;
+  display:flex; flex-direction:column; justify-content:flex-start;
+  gap:28px; min-width:0;
+}
+.card{ min-width:0; }
+.card-polden{ grid-column:1; grid-row:1 / 3; align-self:start; }
+
+.card-btn{
+  display:block; width:100%; text-align:left;
+  background:none; border:0; padding:0; cursor:pointer;
+}
+.card-btn:focus-visible{ outline:2px solid var(--accent); outline-offset:6px; }
+
+.frame{
+  display:block; width:100%; overflow:hidden;
+  background:#fff; border:1px solid var(--line);
+}
+.frame svg,.frame img{ width:100%; height:100%; object-fit:contain; transform-origin:center; transition:transform .8s cubic-bezier(.2,.8,.2,1); }
+.frame-tall{ aspect-ratio:3 / 4; }
+.frame-wide{ aspect-ratio:4 / 3; }
+/* Нижняя карточка заполняет высоту колонки; промежуток остаётся постоянным. */
+@media (min-width:641px){
+  .stack > .card:last-child{ flex:1; min-height:0; display:flex; }
+  .stack > .card:last-child .card-btn{ display:flex; flex-direction:column; min-height:0; }
+  .stack > .card:last-child .frame{
+    position:relative; flex:1; min-height:0; aspect-ratio:auto; background:#EEEBE3;
+  }
+  .stack > .card:last-child .frame svg,
+  .stack > .card:last-child .frame img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  }
+  .stack > .card:last-child .cap{ flex:none; width:100%; }
+}
+
+
+.card-btn:hover .frame{ border-color:var(--accent); }
+
+/* Макеты остаются неподвижными: текст внутри изображений не обрезается. */
+.cap{
+  display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 10px;
+  margin-top:12px; padding-top:11px;
+  border-top:1px solid var(--line);
+}
+.cap-index{ font:700 11px var(--mono); color:var(--accent); letter-spacing:.1em; }
+.cap-title{
+  position:relative;
+  font:800 14.5px/1.2 var(--grotesk); letter-spacing:.08em; text-transform:uppercase;
+}
+.cap-title::after{
+  content:"↗"; margin-left:7px; color:var(--accent);
+  display:inline-block; transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.cap-btn:hover .cap-title::after,
+.card-btn:hover .cap-title::after{ transform:translate(3px,-3px); }
+.cap-type{
+  margin-left:auto;
+  font:500 11.5px/1.5 var(--mono); letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* ============================= ПОДВАЛ ============================= */
+.site-foot{
+  display:flex; align-items:baseline; justify-content:space-between; gap:12px 28px; flex-wrap:wrap;
+  padding:clamp(16px,2.2vh,22px) var(--pad-x);
+  border-top:1px solid var(--line);
+}
+.foot-note{ font-size:13.5px; color:rgba(34,36,35,.85); }
+.foot-mark{ font:500 11px var(--mono); letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+
+/* =========================== ДИАЛОГИ =========================== */
+dialog.dlg{
+  border:1px solid var(--line);
+  background:#FBFBF8; color:var(--ink);
+  margin:auto;
+  overscroll-behavior:contain;
+  width:min(560px, calc(100vw - 36px));
+  max-height:min(84vh, 720px);
+  max-height:min(84dvh, 720px);
+  padding:clamp(24px,4vw,36px);
+  overflow:auto;
+  box-shadow:0 24px 60px -28px rgba(25,27,26,.35); /* лёгкая, не «SaaS-тень» */
+}
+dialog.dlg::backdrop{ background:rgba(24,26,25,.52); }
+@media (prefers-reduced-motion: no-preference){
+  dialog.dlg[open]{ animation:dlg-in .34s cubic-bezier(.2,.9,.3,1); }
+}
+@keyframes dlg-in{
+  from{ opacity:0; transform:translateY(16px); }
+  to  { opacity:1; transform:none; }
+}
+
+.dlg-top{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.dlg-kicker{
+  font:600 11.5px/1 var(--mono); letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted);
+}
+.dlg-close{
+  width:38px; height:38px; flex:none;
+  display:grid; place-items:center;
+  background:none; border:1px solid var(--line); border-radius:50%;
+  cursor:pointer; transition:background .25s ease, color .25s ease, border-color .25s ease;
+}
+.dlg-close:hover{ background:var(--ink); color:var(--bg); border-color:var(--ink); }
+.dlg-close svg{ width:14px; height:14px; }
+
+.dlg-title{
+  margin-top:16px;
+  font:800 clamp(24px,3.4vw,32px)/1.12 var(--grotesk);
+  letter-spacing:-.01em; text-transform:uppercase;
+}
+.dlg-body{ margin-top:14px; font-size:16px; color:rgba(34,36,35,.9); }
+.dlg-note{
+  margin-top:20px; padding-top:14px; border-top:1px solid var(--line);
+  font:500 11.5px/1.7 var(--mono); letter-spacing:.08em; text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* шаги процесса */
+.steps{ list-style:none; margin-top:18px; border-top:1px solid var(--line); }
+.steps li{
+  display:grid; grid-template-columns:46px 1fr; gap:14px;
+  padding:13px 0; border-bottom:1px solid var(--line);
+}
+.steps .num{ font:700 12px/1.6 var(--mono); color:var(--accent); }
+.steps .st-name{ font:700 15px/1.5 var(--grotesk); letter-spacing:.03em; text-transform:uppercase; }
+.steps .st-desc{ display:block; font-size:14.5px; color:rgba(34,36,35,.78); }
+
+.mail-link{
+  display:inline-flex; align-items:center; gap:10px; margin-top:18px;
+  font:800 clamp(17px,2.6vw,22px)/1.3 var(--grotesk); letter-spacing:.01em;
+  color:var(--accent); text-decoration:none;
+  border-bottom:2px solid rgba(52,84,232,.35); padding-bottom:3px;
+  transition:border-color .25s ease;
+  word-break:break-all;
+}
+.mail-link:hover{ border-color:var(--accent); }
+.mail-link .arr{ transition:transform .3s cubic-bezier(.2,.8,.2,1); }
+.mail-link:hover .arr{ transform:translate(3px,-3px); }
+
+/* --------------------- появление при прокрутке --------------------- */
+[data-reveal]{
+  opacity:1; transform:none;
+  transition:opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1);
+  transition-delay:var(--rd,0s);
+}
+[data-reveal].reveal-pending{ opacity:0; transform:translateY(22px); }
+[data-reveal].is-in{ opacity:1; transform:none; }
+
+/* =========================== АДАПТИВ =========================== */
+@media (max-width:1024px){
+  .spread{ grid-template-columns:1fr; }
+  .intro{ max-width:640px; }
+  .cue{ padding-top:30px; }
+}
+@media (max-width:860px){
+  .site-head{ align-items:flex-start; flex-direction:column; gap:14px; }
+}
+@media (max-width:640px){
+  body{ font-size:16px; }
+  .headline{ font-size:clamp(34px,10.5vw,54px); }
+  .gallery-grid{ grid-template-columns:1fr; row-gap:24px; }
+  .card-polden{ grid-column:1; grid-row:auto; }
+  .stack{ grid-column:1; grid-row:auto; }
+  .stack{ display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start; }
+  .cap-type{ margin-left:0; width:100%; }
+  .site-nav{ flex-wrap:wrap; gap:12px 20px; }
+}
+@media (max-width:460px){
+  .stack{ grid-template-columns:1fr; gap:24px; }
+  .gallery-grid{ grid-template-columns:1fr; }
+  .card-polden{ grid-column:1; grid-row:auto; }
+  .stack{ grid-column:1; grid-row:auto; }
+}
+
+/* --------------------- prefers-reduced-motion --------------------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .headline .line-in{ transform:none; animation:none; }
+  [data-reveal]{ opacity:1 !important; transform:none !important; }
+  .cue-line::after{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<aside class="folio-side" aria-hidden="true">Портфолио · выпуск 01 — 2026</aside>
+
+<!-- ================================ ШАПКА ================================ -->
+<header class="site-head" data-reveal>
+  <div class="brand">
+    <p class="brand-name">Наталья Волченкова</p>
+    <p class="brand-role">Графический дизайнер · AI-визуалы</p>
+  </div>
+  <nav class="site-nav" aria-label="Основная навигация">
+    <a class="nav-link" href="#projects">Проекты</a>
+    <button class="nav-link" type="button" data-open="dlg-approach" aria-controls="dlg-approach" aria-haspopup="dialog">Подход</button>
+    <button class="nav-link" type="button" data-open="dlg-contacts" aria-controls="dlg-contacts" aria-haspopup="dialog">Контакты <span class="arr" aria-hidden="true">↗</span></button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="spread">
+
+    <!-- ===================== ЛЕВАЯ КОЛОНКА: САМОПРЕЗЕНТАЦИЯ ===================== -->
+    <section class="intro" aria-labelledby="headline">
+      <p class="kicker" data-reveal>Визуальные концепции · портфолио</p>
+
+      <h1 id="headline" class="headline">
+        <span class="line"><span class="line-in" style="--i:0">Идея<em class="pt">.</em></span></span>
+        <span class="line"><span class="line-in" style="--i:1">Образ<em class="pt">.</em></span></span>
+        <span class="line"><span class="line-in soft-wrap" style="--i:2">Характер бренда<em class="pt">.</em></span></span>
+      </h1>
+
+      <p class="lede" data-reveal style="--rd:.35s">
+        Разрабатываю визуальные концепции для брендов: от идеи и первых вариантов
+        до рекламных материалов. Использую ИИ для поиска образов, дорабатываю
+        графику и собираю цельные серии.
+      </p>
+
+      <a class="cta" href="#projects" data-reveal style="--rd:.45s">Смотреть проекты <span class="arr" aria-hidden="true">↗</span></a>
+
+      <p class="intro-meta" data-reveal style="--rd:.55s">Авторские идеи · визуальный поиск с ИИ · дизайн</p>
+
+      <p class="cue" data-reveal style="--rd:.65s"><span class="cue-line" aria-hidden="true"></span>Избранные работы</p>
+    </section>
+
+    <!-- ======================== ПРАВАЯ КОЛОНКА: ГАЛЕРЕЯ ======================== -->
+    <section class="gallery" id="projects" aria-label="Избранные проекты">
+      <div class="gallery-head" data-reveal>
+        <span>Избранные проекты</span>
+        <span class="gh-count" aria-hidden="true">03</span>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- ПОЛДЕНЬ -->
+        <figure class="card card-polden" data-reveal>
+          <button class="card-btn" type="button" data-open="dlg-polden" aria-controls="dlg-polden" aria-haspopup="dialog">
+            <span class="frame frame-tall">
+              <!-- ================================================================
+                   ЗАМЕНА ИЗОБРАЖЕНИЯ: вставьте сюда реальный макет «ПОЛДЕНЬ»
+                   (например, <img src="…" alt="Рекламный макет „ПОЛДЕНЬ“…">).
+                   Ниже — заменяемый SVG-эскиз: красно-сливочная реклама обедов.
+                   ================================================================ -->
+              <svg viewBox="0 0 900 1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Рекламный макет «ПОЛДЕНЬ»: красно-сливочная кампания обедов — большое красное солнце над сливочной тарелкой и надпись «горячие обеды каждый день»">
+                <title>ПОЛДЕНЬ — рекламная кампания обедов</title>
+                <rect width="900" height="1200" fill="#F7EBDC"/>
+                <circle cx="628" cy="330" r="232" fill="#D8402C"/>
+                <circle cx="212" cy="150" r="9" fill="#D8402C"/>
+                <text x="70" y="96" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="4" fill="#2B2520">ОБЕД — КАЖДЫЙ ДЕНЬ</text>
+                <text x="830" y="96" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="4" fill="#2B2520">№ 012</text>
+                <text x="858" y="620" transform="rotate(90 858 620)" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="19" letter-spacing="9" fill="#B93A26">ПЕРВОЕ · ВТОРОЕ · КОМПОТ</text>
+                <path d="M470 640 q24 -46 0 -92 q-24 -46 0 -92" fill="none" stroke="#2B2520" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+                <path d="M560 660 q24 -46 0 -92 q-24 -46 0 -92" fill="none" stroke="#2B2520" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+                <path d="M650 640 q24 -46 0 -92 q-24 -46 0 -92" fill="none" stroke="#2B2520" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+                <rect x="356" y="742" width="448" height="26" rx="13" fill="#B93A26"/>
+                <path d="M380 768 a200 200 0 0 0 400 0 z" fill="#D8402C"/>
+                <rect x="548" y="968" width="64" height="16" rx="8" fill="#B93A26"/>
+                <text x="70" y="1010" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="98" letter-spacing="2" fill="#2B2520">ПОЛДЕНЬ</text>
+                <text x="70" y="1056" font-family="Consolas, 'Courier New', monospace" font-size="23" letter-spacing="3" fill="#2B2520">перерыв — по расписанию</text>
+                <rect x="0" y="1096" width="900" height="104" fill="#2B2520"/>
+                <text x="70" y="1158" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="4" fill="#F7EBDC">ГОТОВЫЕ ОБЕДЫ — КОНЦЕПЦИЯ</text>
+                <text x="830" y="1158" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="2" fill="#F7EBDC">ЭСКИЗ</text>
+              </svg>
+            </span>
+            <span class="cap">
+              <span class="cap-index" aria-hidden="true">01</span>
+              <span class="cap-title">Полдень</span>
+              <span class="cap-type">Рекламная кампания</span>
+            </span>
+          </button>
+        </figure>
+
+        <div class="stack">
+
+          <!-- ТИШЕ -->
+          <figure class="card" data-reveal style="--rd:.12s">
+            <button class="card-btn" type="button" data-open="dlg-tishe" aria-controls="dlg-tishe" aria-haspopup="dialog">
+              <span class="frame frame-wide">
+                <!-- ================================================================
+                     ЗАМЕНА ИЗОБРАЖЕНИЯ: вставьте сюда реальный макет «ТИШЕ».
+                     Ниже — заменяемый SVG-эскиз: синяя реклама наушников.
+                     ================================================================ -->
+                <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Рекламный макет «ТИШЕ»: синяя концепция наушников с шумоподавлением — белые наушники на фоне расходящихся колец тишины">
+                  <title>ТИШЕ — визуальная концепция</title>
+                  <rect width="1200" height="900" fill="#2743C9"/>
+                  <g fill="none" stroke="#FFFFFF" stroke-opacity=".13" stroke-width="2">
+                    <circle cx="600" cy="430" r="190"/>
+                    <circle cx="600" cy="430" r="285"/>
+                    <circle cx="600" cy="430" r="380"/>
+                  </g>
+                  <text x="70" y="78" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="4" fill="#DDE3FF">ВИЗУАЛЬНАЯ КОНЦЕПЦИЯ</text>
+                  <text x="1130" y="78" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="4" fill="#DDE3FF">В РАЗРАБОТКЕ</text>
+                  <path d="M415 545 C415 330 785 330 785 545" fill="none" stroke="#F2F4FF" stroke-width="44" stroke-linecap="round"/>
+                  <rect x="377" y="522" width="82" height="122" rx="32" fill="#F2F4FF"/>
+                  <rect x="741" y="522" width="82" height="122" rx="32" fill="#F2F4FF"/>
+                  <rect x="399" y="550" width="38" height="66" rx="19" fill="#2743C9" opacity=".85"/>
+                  <rect x="763" y="550" width="38" height="66" rx="19" fill="#2743C9" opacity=".85"/>
+                  <circle cx="418" cy="668" r="8" fill="#FF6A4D"/>
+                  <text x="70" y="772" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="148" letter-spacing="6" fill="#FFFFFF">ТИШЕ</text>
+                  <text x="72" y="824" font-family="Consolas, 'Courier New', monospace" font-size="23" letter-spacing="3" fill="#DDE3FF">наушники, в которых тихо</text>
+                  <text x="1130" y="824" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="3" fill="#DDE3FF">ЭСКИЗ КОНЦЕПЦИИ</text>
+                </svg>
+              </span>
+              <span class="cap">
+                <span class="cap-index" aria-hidden="true">02</span>
+                <span class="cap-title">Тише</span>
+                <span class="cap-type">Визуальная концепция</span>
+              </span>
+            </button>
+          </figure>
+
+          <!-- МЕСТО -->
+          <figure class="card" data-reveal style="--rd:.22s">
+            <button class="card-btn" type="button" data-open="dlg-mesto" aria-controls="dlg-mesto" aria-haspopup="dialog">
+              <span class="frame frame-wide">
+                <!-- ================================================================
+                     ЗАМЕНА ИЗОБРАЖЕНИЯ: вставьте сюда реальный макет «МЕСТО».
+                     Ниже — заменяемый SVG-эскиз: светлая композиция
+                     с модульной мебелью.
+                     ================================================================ -->
+                <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Рекламный макет «МЕСТО»: светлая композиция с модульным диваном у окна — реклама и веб для модульной мебели">
+                  <title>МЕСТО — реклама и веб</title>
+                  <rect width="1200" height="900" fill="#EEEBE3"/>
+                  <g stroke="#262824" stroke-opacity=".08" stroke-width="1.5" stroke-dasharray="3 9">
+                    <path d="M240 120 V700"/><path d="M480 120 V700"/><path d="M720 120 V700"/><path d="M960 120 V700"/>
+                  </g>
+                  <rect x="780" y="120" width="290" height="340" fill="#F8F5EC" stroke="#262824" stroke-width="3"/>
+                  <path d="M925 120 V460 M780 290 H1070" stroke="#262824" stroke-width="3"/>
+                  <circle cx="905" cy="228" r="36" fill="#E3C46F"/>
+                  <rect x="240" y="655" width="260" height="26" rx="6" fill="#262824"/>
+                  <rect x="500" y="655" width="260" height="26" rx="6" fill="#C9B795"/>
+                  <rect x="240" y="548" width="180" height="100" rx="10" fill="#C9B795"/>
+                  <rect x="424" y="548" width="176" height="100" rx="10" fill="#9DAA90"/>
+                  <rect x="604" y="548" width="156" height="100" rx="10" fill="#EFEAE0"/>
+                  <rect x="208" y="430" width="66" height="226" rx="12" fill="#262824"/>
+                  <rect x="764" y="560" width="150" height="121" rx="10" fill="#9DAA90"/>
+                  <text x="70" y="78" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="4" fill="#262824">МЕБЕЛЬ ИЗ МОДУЛЕЙ</text>
+                  <text x="1130" y="78" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="4" fill="#262824">РЕКЛАМА · ВЕБ</text>
+                  <ellipse cx="520" cy="700" rx="390" ry="16" fill="#262824" opacity=".07"/>
+                  <text x="70" y="790" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="118" letter-spacing="4" fill="#262824">МЕСТО</text>
+                  <text x="72" y="838" font-family="Consolas, 'Courier New', monospace" font-size="22" letter-spacing="3" fill="#262824">соберите свой диван — концепция</text>
+                  <text x="1130" y="838" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="21" letter-spacing="2" fill="#262824">м·м</text>
+                </svg>
+              </span>
+              <span class="cap">
+                <span class="cap-index" aria-hidden="true">03</span>
+                <span class="cap-title">Место</span>
+                <span class="cap-type">Реклама и веб</span>
+              </span>
+            </button>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ================================ ПОДВАЛ ================================ -->
+<footer class="site-foot">
+  <p class="foot-note">От гипотез и референсов — к цельной визуальной концепции.</p>
+  <p class="foot-mark" aria-hidden="true">НВ · 2026</p>
+</footer>
+
+<!-- ============================== ДИАЛОГИ ============================== -->
+<dialog class="dlg" id="dlg-polden" aria-labelledby="t-polden">
+  <div class="dlg-top">
+    <p class="dlg-kicker">№ 01 · Рекламная кампания</p>
+    <button class="dlg-close" type="button" data-close aria-label="Закрыть окно">
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <h2 class="dlg-title" id="t-polden">Полдень</h2>
+  <div class="dlg-body">
+    <p>«ПОЛДЕНЬ» — учебный проект доставки готовых обедов. Кампания «Перерыв — по расписанию»
+    посвящена времени на обед среди рабочих дел. Здесь показан временный графический эскиз
+    для проверки композиции страницы; готовые рекламные материалы будут добавлены позже.</p>
+  </div>
+  <p class="dlg-note">Самостоятельная концепция · не клиентский заказ</p>
+</dialog>
+
+<dialog class="dlg" id="dlg-tishe" aria-labelledby="t-tishe">
+  <div class="dlg-top">
+    <p class="dlg-kicker">№ 02 · Визуальная концепция</p>
+    <button class="dlg-close" type="button" data-close aria-label="Закрыть окно">
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <h2 class="dlg-title" id="t-tishe">Тише</h2>
+  <div class="dlg-body">
+    <p>Визуальная концепция наушников с шумоподавлением. Глубокий синий, расходящиеся кольца
+    и фигура наушников строят образ выключенного города: звук есть, шума нет. Серия задумана
+    для наружной рекламы и карточек продукта — сейчас в разработке.</p>
+  </div>
+  <p class="dlg-note">Самостоятельная концепция · в разработке</p>
+</dialog>
+
+<dialog class="dlg" id="dlg-mesto" aria-labelledby="t-mesto">
+  <div class="dlg-top">
+    <p class="dlg-kicker">№ 03 · Реклама и веб</p>
+    <button class="dlg-close" type="button" data-close aria-label="Закрыть окно">
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <h2 class="dlg-title" id="t-mesto">Место</h2>
+  <div class="dlg-body">
+    <p>Реклама и веб-концепция модульной мебели. Светлая, спокойная композиция строится
+    на модульной сетке — как сам диван собирается из блоков, так и макет собирается
+    из повторяемых элементов. На странице показан временный графический эскиз; проект в разработке.</p>
+  </div>
+  <p class="dlg-note">Самостоятельная концепция · в разработке</p>
+</dialog>
+
+<dialog class="dlg" id="dlg-approach" aria-labelledby="t-approach">
+  <div class="dlg-top">
+    <p class="dlg-kicker">Подход</p>
+    <button class="dlg-close" type="button" data-close aria-label="Закрыть окно">
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <h2 class="dlg-title" id="t-approach">Как устроен процесс</h2>
+  <ol class="steps">
+    <li><span class="num">01</span><span><span class="st-name">Задача</span><span class="st-desc">Формулирую цель, аудиторию и настроение будущей серии.</span></span></li>
+    <li><span class="num">02</span><span><span class="st-name">Идея</span><span class="st-desc">Ищу метафору и визуальный ход, на котором будет держаться образ.</span></span></li>
+    <li><span class="num">03</span><span><span class="st-name">AI-варианты</span><span class="st-desc">Генерирую варианты образов и отбираю самые точные.</span></span></li>
+    <li><span class="num">04</span><span><span class="st-name">Ручная доработка</span><span class="st-desc">Правлю композицию, цвет и детали, собираю типографику.</span></span></li>
+    <li><span class="num">05</span><span><span class="st-name">Серия</span><span class="st-desc">Разворачиваю образ в цельную серию рекламных материалов.</span></span></li>
+  </ol>
+  <p class="dlg-note">Все работы в портфолио — самостоятельные концепции</p>
+</dialog>
+
+<dialog class="dlg" id="dlg-contacts" aria-labelledby="t-contacts">
+  <div class="dlg-top">
+    <p class="dlg-kicker">Контакты</p>
+    <button class="dlg-close" type="button" data-close aria-label="Закрыть окно">
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <h2 class="dlg-title" id="t-contacts">Напишите мне</h2>
+  <div class="dlg-body">
+    <p>Расскажите о задаче — отвечу и предложу, как к ней подступиться.</p>
+    <a class="mail-link" href="mailto:fiery-dragon@mail.ru">fiery-dragon@mail.ru <span class="arr" aria-hidden="true">↗</span></a>
+  </div>
+  <p class="dlg-note">Почта — основной способ связи</p>
+</dialog>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Progressive enhancement: без JavaScript весь основной контент виден. */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+  function reveal(el) {
+    el.classList.remove('reveal-pending');
+    el.classList.add('is-in');
+  }
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    try {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { reveal(entry.target); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.01 });
+      revealEls.forEach(function (el, i) {
+        if (!el.style.getPropertyValue('--rd')) el.style.setProperty('--rd', Math.min(i * 70, 350) + 'ms');
+        el.classList.add('reveal-pending');
+        io.observe(el);
+      });
+      /* При переходе клавиатурой не оставляем фокус в невидимом блоке. */
+      document.addEventListener('focusin', function (e) {
+        revealEls.forEach(function (el) { if (el.contains(e.target)) reveal(el); });
+      });
+    } catch (_) { revealEls.forEach(reveal); }
+  } else { revealEls.forEach(reveal); }
+
+  /* Нативные dialog: фокус и Escape поддерживает браузер. */
+  var openers = new WeakMap();
+  document.querySelectorAll('[data-open]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var dlg = document.getElementById(btn.dataset.open);
+      if (!dlg || dlg.open) return;
+      openers.set(dlg, btn);
+      dlg.showModal();
+      document.body.classList.add('dialog-open');
+    });
+  });
+  document.querySelectorAll('dialog.dlg').forEach(function (dlg) {
+    var startedOutside = false;
+    function outside(e) {
+      var r = dlg.getBoundingClientRect();
+      return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    }
+    dlg.addEventListener('pointerdown', function (e) {
+      startedOutside = e.target === dlg && outside(e);
+    });
+    dlg.addEventListener('pointercancel', function () { startedOutside = false; });
+    dlg.addEventListener('click', function (e) {
+      /* Padding окна — часть окна, а не подложка. */
+      if (startedOutside && e.target === dlg && outside(e)) dlg.close();
+      startedOutside = false;
+    });
+    dlg.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var items = Array.from(dlg.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(function (el) { return el.getClientRects().length; });
+      var first = items[0], last = items[items.length - 1];
+      if (!first) { e.preventDefault(); return; }
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+    dlg.addEventListener('close', function () {
+      if (!document.querySelector('dialog[open]')) document.body.classList.remove('dialog-open');
+      var opener = openers.get(dlg);
+      if (opener && opener.isConnected) opener.focus({ preventScroll: true });
+      openers.delete(dlg);
+    });
+    dlg.querySelectorAll('[data-close]').forEach(function (btn) {
+      btn.addEventListener('click', function () { dlg.close(); });
+    });
+  });
+})();
+</script>
+</body>
+</html>
