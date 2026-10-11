@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "root_html_pages": 5,
+  "case_pages": 4,
+  "local_references_checked": 266,
+  "image_instances_verified": 104,
+  "dialog_targets_checked": 14,
+  "previous_case_files_preserved": true,
+  "changed_baseline_files": [
+    "index.html"
+  ],
+  "homepage_cards": 4,
+  "loop_content_boards": 11,
+  "loop_images": 13,
+  "original_animated_cover_preserved_byte_for_byte": true,
+  "approved_rgb_image_pixels_preserved": true,
+  "animation": "Original HTML inside isolated 1440x840 iframe, scaled to container, pause/resume, reduced-motion poster and no-JS poster.",
+  "responsive_layout_review": "Two equal gallery columns and two aligned rows; one column at <=460px. Shared page edges, first-baseline text alignment, intrinsic image ratios, readable native explanations, enlarging images with horizontal panning on mobile.",
+  "browser_visual_and_interaction_QA": "Not performed: required control-browser unavailable in managed environment.",
+  "live_publication": "Not performed: portable GitHub package for user installation."
+}

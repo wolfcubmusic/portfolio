@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "html_pages": 4,
+  "local_references_checked": 224,
+  "image_instances_verified": 91,
+  "dialog_targets_checked": 11,
+  "published_baseline_preserved": true,
+  "mesto_images": 34,
+  "palette_colors": 5,
+  "breakpoints_px": [
+    1000,
+    640
+  ],
+  "css_layout_review": "Equal gaps, minmax(0,1fr), intrinsic image ratios, single-column mobile; no fixed content heights.",
+  "browser_visual_and_interaction_QA": "Not performed: required browser skill unavailable in managed environment.",
+  "landing_url": "Pending user-supplied GitHub Pages URL; old address removed.",
+  "live_publication": "Not performed",
+  "alignment_review": "First-baseline section labels; shared grid rows for notes, palette and type; equal phone-grid edges; consistent mobile container."
+}

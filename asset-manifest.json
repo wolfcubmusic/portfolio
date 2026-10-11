@@ -1,0 +1,206 @@
+[
+  {
+    "name": "cover",
+    "width": 1440,
+    "height": 1080,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-case-direction/MESTO-project-card.png"
+  },
+  {
+    "name": "room-work",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-feed/interiors/01-work.png"
+  },
+  {
+    "name": "feed-work",
+    "width": 1080,
+    "height": 1350,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-feed/MESTO-01-work.png"
+  },
+  {
+    "name": "story-work",
+    "width": 1080,
+    "height": 1920,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-stories/MESTO-story-01-work.png"
+  },
+  {
+    "name": "room-guests",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-feed/interiors/02-guests.png"
+  },
+  {
+    "name": "feed-guests",
+    "width": 1080,
+    "height": 1350,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-feed/MESTO-02-guests.png"
+  },
+  {
+    "name": "story-guests",
+    "width": 1080,
+    "height": 1920,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-stories/MESTO-story-02-guests.png"
+  },
+  {
+    "name": "room-rest",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-feed/interiors/03-rest.png"
+  },
+  {
+    "name": "feed-rest",
+    "width": 1080,
+    "height": 1350,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-feed/MESTO-03-rest.png"
+  },
+  {
+    "name": "story-rest",
+    "width": 1080,
+    "height": 1920,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-stories/MESTO-story-03-rest.png"
+  },
+  {
+    "name": "banner-wide",
+    "width": 1600,
+    "height": 412,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-web/MESTO-web-970x250@2x.png"
+  },
+  {
+    "name": "banner-square",
+    "width": 600,
+    "height": 500,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-web/MESTO-web-300x250@2x.png"
+  },
+  {
+    "name": "poster-stop",
+    "width": 1600,
+    "height": 2400,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-outdoor/MESTO-outdoor-stop@2x.png"
+  },
+  {
+    "name": "poster-panel",
+    "width": 1600,
+    "height": 2400,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-outdoor/MESTO-outdoor-panel@2x.png"
+  },
+  {
+    "name": "city-stop",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-209adc44-77eb-485c-ae88-44f8c3505f70.png"
+  },
+  {
+    "name": "city-panel",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-2f23891f-1123-4b18-b6e0-59bf3707bfdf.png"
+  },
+  {
+    "name": "section",
+    "width": 1254,
+    "height": 1254,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-b46d6fff-b9fa-4042-b7b0-7c7587f9bc0f.png"
+  },
+  {
+    "name": "ottoman",
+    "width": 1254,
+    "height": 1254,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-e7eb4ea5-eeed-4b01-88ba-4010cc97fe35.png"
+  },
+  {
+    "name": "desk",
+    "width": 1254,
+    "height": 1254,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-5407a021-b0a0-451b-b490-703ea1c4dc7e.png"
+  },
+  {
+    "name": "storage",
+    "width": 1254,
+    "height": 1254,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-fdf0820f-4a31-4576-b8fe-1e0bda2b3fb3.png"
+  },
+  {
+    "name": "fabric",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-6d3fdf87-5702-4108-9866-297a23838317.png"
+  },
+  {
+    "name": "seam",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-359840ad-47a4-4509-99fe-23526b786f5f.png"
+  },
+  {
+    "name": "oak",
+    "width": 1536,
+    "height": 1024,
+    "source": "/workspace/scratch/5e0ba90c99e1/generated_images/exec-f3cdd92e-685c-4842-b162-34f55109f81d.png"
+  },
+  {
+    "name": "desktop-monitor",
+    "width": 1440,
+    "height": 1600,
+    "source": "/workspace/scratch/5e0ba90c99e1/outputs/mesto-case-direction/MESTO-case-09a-desktop-monitor.png"
+  },
+  {
+    "name": "desktop-overview",
+    "width": 949,
+    "height": 4267,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "desktop-scenarios",
+    "width": 949,
+    "height": 753,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "desktop-collection",
+    "width": 949,
+    "height": 661,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "desktop-selection",
+    "width": 949,
+    "height": 647,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "mobile-1",
+    "width": 400,
+    "height": 872,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "mobile-2",
+    "width": 400,
+    "height": 872,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "mobile-3",
+    "width": 400,
+    "height": 872,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "mobile-4",
+    "width": 400,
+    "height": 872,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "mobile-5",
+    "width": 400,
+    "height": 872,
+    "source": "approved screenshot crop"
+  },
+  {
+    "name": "mobile-6",
+    "width": 400,
+    "height": 872,
+    "source": "approved screenshot crop"
+  }
+]
