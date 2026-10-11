@@ -1,0 +1,8 @@
+/* Four projects, two aligned rows. The approved covers remain whole. */
+.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:32px clamp(20px,2.4vw,36px)}
+.gallery-grid>.card-polden,.gallery-grid>.card-tishe,.gallery-grid>.card-mesto,.gallery-grid>.card-loop{grid-column:auto;grid-row:auto;align-self:start}
+.card-mesto .card-btn,.card-loop .card-btn{display:block}
+.card-mesto .frame,.card-loop .frame{aspect-ratio:4/3;background:#fff}
+.card-mesto .cap,.card-loop .cap{margin-top:12px;align-content:normal}
+@media(max-width:640px){.gallery-grid{gap:28px 16px}.gallery-grid .cap-type{width:100%;margin-left:0}}
+@media(max-width:460px){.gallery-grid{grid-template-columns:1fr;gap:32px}.gallery-grid>.card{grid-column:1;grid-row:auto}}

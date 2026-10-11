@@ -1,0 +1,5 @@
+/* Finished MESTO card: full-width image, same gallery edges and gaps. */
+.gallery-grid>.card-mesto{grid-column:1/-1}
+.card-mesto .card-btn{display:block}
+.card-mesto .frame{aspect-ratio:4/3;background:#F3F0E9}
+.card-mesto .cap{margin-top:12px;align-content:normal}
