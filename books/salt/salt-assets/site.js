@@ -13,6 +13,9 @@
   };
   menuButton?.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
   $$('#main-nav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('click', e => {
+    if (menu?.classList.contains('is-open') && !e.target.closest('.topbar')) setMenu(false);
+  });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && menu?.classList.contains('is-open')) { setMenu(false); menuButton.focus(); }
   });
@@ -32,7 +35,11 @@
   function closeDialog(dialog) { dialog?.close(); }
   $$('dialog').forEach(dialog => {
     $('[data-close]', dialog)?.addEventListener('click', () => closeDialog(dialog));
-    dialog.addEventListener('click', e => { if (e.target === dialog) closeDialog(dialog); });
+    dialog.addEventListener('click', e => {
+      if (e.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) closeDialog(dialog);
+    });
     dialog.addEventListener('close', () => {
       if (!document.querySelector('dialog[open]')) {
         document.body.classList.remove('has-dialog');
