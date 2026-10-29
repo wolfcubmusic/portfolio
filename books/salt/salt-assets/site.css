@@ -29,3 +29,7 @@ dialog{color:var(--ink);background:#10272e;border:1px solid #5a7476;padding:0;ma
 
 /* Spacing below contact actions, before the explanatory note. */
 #contact-dialog .dialog-note{margin-top:34px;}
+
+/* Atlas: use a landscape frame for the approved panoramic lighthouse artwork. */
+.atlas-art.wide{aspect-ratio:16/9}
+.atlas-art.wide img{object-fit:cover;object-position:center center}

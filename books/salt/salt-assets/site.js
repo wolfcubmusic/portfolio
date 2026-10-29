@@ -92,7 +92,7 @@
 
   const locations = [
     {title:'Острова костей',label:'Локация 01',src:'salt-assets/archipelago-1920.webp',small:'salt-assets/archipelago-900.webp',width:1920,smallWidth:900,alt:'Архипелаг из останков древних богов, соединённый руинами мостов',text:'Архипелаг, выросший на останках мёртвых богов. Здесь скалы сохраняют форму рёбер, а дороги обрываются там, где начинается прилив. Между островами ещё стоят мосты — и ещё помнят обещания.',portrait:false},
-    {title:'Погребальный маяк',label:'Локация 02',src:'salt-assets/stairs-1100.webp',small:'salt-assets/stairs-600.webp',width:1100,smallWidth:600,alt:'Смотрительница с фонарём на внешней лестнице погребального маяка',text:'Последний огонь на краю архипелага. Его зажигают не для кораблей. Смотрительница знает каждую ступень этой башни, но не знает, кто первым велел держать свет и что случится, если он погаснет.',portrait:true},
+    {title:'Погребальный маяк',label:'Локация 02',src:'salt-assets/funerary-lighthouse-1920.webp',small:'salt-assets/funerary-lighthouse-900.webp',width:1920,smallWidth:900,alt:'Погребальный маяк над штормовым морем, гигантский древний череп и костяные арки на закате',text:'Последний огонь на краю архипелага. Его зажигают не для кораблей. Смотрительница знает каждую ступень этой башни, но не знает, кто первым велел держать свет и что случится, если он погаснет.',portrait:false,wide:true},
     {title:'Глубинный разлом',label:'Локация 03',src:'salt-assets/underwater-1600.webp',small:'salt-assets/underwater-900.webp',width:1600,smallWidth:900,alt:'Гигантские древние кости над затонувшим подводным каньоном',text:'Под водой лежит другая половина мира. Течения проходят сквозь древние кости, а свет с поверхности гаснет задолго до дна. Здесь остаётся всё, что море пока не готово вернуть.',portrait:false}
   ];
   const tabs = $$('.atlas-tab');
@@ -103,6 +103,7 @@
     const image=$('#atlas-image');
     image.src=data.src; image.srcset=data.small+' '+data.smallWidth+'w, '+data.src+' '+data.width+'w';image.alt=data.alt;
     $('#atlas-art').classList.toggle('portrait',data.portrait);
+    $('#atlas-art').classList.toggle('wide',Boolean(data.wide));
     $('#atlas-art').style.setProperty('--atlas-backdrop',`url("${data.small}")`);
     $('#atlas-title').textContent=data.title;$('#atlas-description').textContent=data.text;$('#atlas-count').textContent=data.label;
     $('#atlas-panel').setAttribute('aria-labelledby',tabs[index].id);
